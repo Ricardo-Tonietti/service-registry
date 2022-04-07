@@ -5,6 +5,17 @@ spring:
   application:
     name: ead-service-registry
 
+  output:
+    ansi:
+      enabled: ALWAYS
+
+  logging:
+    level:
+      com.ead: TRACE
+      root: INFO
+      org.springframework.web: DEBUG
+      org.hibernate: INFO
+
 eureka:
   client:
     register-with-eureka: false
