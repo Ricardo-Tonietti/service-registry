@@ -1,0 +1,30 @@
+server:
+  port: ${PORT}
+
+ead:
+  serviceRegistry:
+    username: ${EUREKA_USERNAME}
+    password: ${EUREKA_PASSWORD}
+
+  output:
+    ansi:
+      enabled: ALWAYS
+
+  logging:
+    level:
+      com.ead: TRACE
+      root: INFO
+      org.springframework.web: DEBUG
+      org.hibernate: INFO
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: ${EUREKA_URL}
+
+  instance:
+    hostname: ${APP_DOMAIN_NAME}
+    non-secure-port: 80
+
