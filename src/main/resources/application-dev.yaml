@@ -1,0 +1,26 @@
+server:
+  port: 8761
+
+ead:
+  serviceRegistry:
+    username: serviceregistry
+    password: 'ead123sr'
+
+  output:
+    ansi:
+      enabled: ALWAYS
+
+  logging:
+    level:
+      com.ead: TRACE
+      root: INFO
+      org.springframework.web: DEBUG
+      org.hibernate: INFO
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: 'http://${ead.serviceRegistry.username}:${ead.serviceRegistry.password}@localhost:8761/eureka'
+
